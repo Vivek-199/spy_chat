@@ -1,7 +1,6 @@
 from spy_details import spy, Spy,ChatMessage,friends
 from steganography.steganography import Steganography
 from datetime import datetime
-from termcolor import colored
 
 STATUS_MESSAGES = ["sic parvis magna","i am batman","why so serious?"]
 
@@ -108,7 +107,14 @@ def send_message():
 
     friends[friend_choice].chats.append(new_chat)
 
-    print "Your message has been sent"
+    if text.upper() == "SOS" :
+        print ("unit has been dispatched for your rescue")
+    elif text.upper() == "MAYDAY" :
+        print ("unit has been dispatched for your rescue ")
+    elif text.upper() == "ALERT" :
+        print ("unit has been dispatched for your rescue ")
+    else :
+        print "Your message has been sent"
 
 #Method for reading and saving a message
 def read_message():
@@ -129,7 +135,6 @@ def read_message():
 def read_chat_history():
 
     read_chat = select_a_friend()
-
 
 
     for chat in friends[read_chat].chats:
